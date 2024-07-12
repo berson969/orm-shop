@@ -12,6 +12,9 @@ def home(request):
 def cars_list_view(request):
 	# получите список авто
 	cars = Car.objects.all()
+	query = request.GET.get('q', '')
+	if query:
+		cars = cars.filter(model__icontains=query)
 	context = {'cars': cars}
 	template_name = 'main/list.html'
 	return render(request, template_name, context)  # передайте необходимый контекст
