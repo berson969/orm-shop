@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title %}Домашняя страница{% endblock title %}
+
+{% block content %}
+<div style="text-align: center; margin: 0 auto;" xmlns="http://www.w3.org/1999/html">
+		<h1>Добро пожаловать в автосалон ORM!</h1>
+		<a href="{% url 'list' %}">
+			<h2>Перейти к списку автомобилей</h2>
+		</a>
+	</div>
+{% endblock content %}
